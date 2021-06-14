@@ -11,12 +11,13 @@ function ListItem({ id, fname, lname, image, email, workPhone, homePhone }) {
     dispatch(removeData(id));
   }
 
+  console.log(image);
   return (
     <View>
       <Image
         style={styles.tinyLogo}
         source={{
-          uri: { image }
+          uri: image
         }}
       />
       <Text>{fname}</Text>
