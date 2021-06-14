@@ -1,22 +1,29 @@
 import React from "react";
-import { View, Text, Image, StyleSheet, Pressable } from "react-native";
+import { View, Text, Image, StyleSheet } from "react-native";
 
-function ContactProfile({ fname, lname, image, email, workPhone, homePhone }) {
+function ContactProfile({
+  fname,
+  lname,
+  image,
+  email,
+  workPhone,
+  homePhone,
+  navigation
+}) {
   return (
     <View>
-      <Pressable>
-        <Image
-          style={styles.tinyLogo}
-          source={{
-            uri: image
-          }}
-        />
-        <Text>{fname}</Text>
-        <Text>{lname}</Text>
-        <Text>{email}</Text>
-        <Text>{workPhone}</Text>
-        <Text>{homePhone}</Text>
-      </Pressable>
+      <Image
+        style={styles.tinyLogo}
+        source={{
+          uri:
+            "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAYAAAA6oTAqAAAAEXRFWHRTb2Z0d2FyZQBwbmdjcnVzaEB1SfMAAABQSURBVGje7dSxCQBACARB+2/ab8BEeQNhFi6WSYzYLYudDQYGBgYGBgYGBgYGBgYGBgZmcvDqYGBgmhivGQYGBgYGBgYGBgYGBgYGBgbmQw+P/eMrC5UTVAAAAABJRU5ErkJggg=="
+        }}
+      />
+      <Text>Sam</Text>
+      <Text>Dom</Text>
+      <Text>email</Text>
+      <Text>workPhone</Text>
+      <Text>homePhone</Text>
     </View>
   );
 }

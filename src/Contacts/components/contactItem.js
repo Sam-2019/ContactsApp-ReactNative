@@ -1,10 +1,18 @@
 import React from "react";
 import { View, Text, Image, StyleSheet, Pressable } from "react-native";
 
-function ContactItem({ fname, lname, image, email, workPhone, homePhone }) {
+function ContactItem({
+  fname,
+  lname,
+  image,
+  email,
+  workPhone,
+  homePhone,
+  navigation
+}) {
   return (
     <View>
-      <Pressable>
+      <Pressable onPress={() => navigation.navigate("User")}>
         <Image
           style={styles.tinyLogo}
           source={{
