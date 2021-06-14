@@ -1,2 +1,2 @@
-# ContactsApp-ReactNative
+# CodingInterview
 Created with CodeSandbox
