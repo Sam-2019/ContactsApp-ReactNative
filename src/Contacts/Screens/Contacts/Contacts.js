@@ -9,7 +9,7 @@ const Stack = createStackNavigator();
 function ContactsStack() {
   return (
     <Stack.Navigator initialRouteName="ContactList">
-      <Stack.Screen name="ContactList" component={ContactList} />
+      <Stack.Screen name="Contacts" component={ContactList} />
       <Stack.Screen
         name="User"
         component={ContactProfile}
