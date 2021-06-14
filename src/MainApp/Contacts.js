@@ -5,7 +5,7 @@ import ListInput from "./ListInput";
 import { useSelector } from "react-redux";
 import { dataData } from "./features/dataSlice";
 
-function App() {
+function Contacts() {
   const dataList = useSelector(dataData);
 
   const [name, setName] = useState("");
@@ -18,7 +18,7 @@ function App() {
   );
 }
 
-export default App;
+export default Contacts;
 
 const styles = StyleSheet.create({
   container: {
