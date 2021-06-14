@@ -1,8 +1,11 @@
 import React from "react";
-import { View, Text } from "react-native";
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+
+import ContactsScreen from "./Screens/Contacts";
+import FavoritesScreen from "./Screens/Favorite";
+import MeScreen from "./Screens/Me";
 
 const Tab = createBottomTabNavigator();
 
