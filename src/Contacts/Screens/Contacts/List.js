@@ -7,9 +7,18 @@ import ListItem from "./ListItem";
 
 function List() {
   const dataList = useSelector(dataData);
-  console.log(dataList);
 
-  const renderItem = ({ item }) => <ListItem text={item.name} id={item.id} />;
+  const renderItem = ({ item }) => (
+    <ListItem
+      id={item.id}
+      fname={item.fname}
+      lname={item.lname}
+      image={item.image}
+      email={item.email}
+      workPhone={item.number.work}
+      homePhone={item.number.home}
+    />
+  );
 
   return (
     <View>
