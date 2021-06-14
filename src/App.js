@@ -1,5 +1,5 @@
 import React from "react";
-import Contacts from "./MainApp/Contacts";
+import Contacts from "./Contacts/Contacts";
 import store from "./store";
 import { Provider } from "react-redux";
 
