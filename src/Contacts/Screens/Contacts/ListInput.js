@@ -1,9 +1,14 @@
 import React from "react";
+import { View, TextInput, Button } from "react-native";
 import { adddata } from "./features/dataSlice";
 import { useDispatch } from "react-redux";
 
 function ListInput({ name, setName }) {
   const dispatch = useDispatch();
+
+  function onChange(text) {
+    setName(text);
+  }
 
   function submit() {
     if (!name) {
@@ -20,15 +25,11 @@ function ListInput({ name, setName }) {
   }
 
   return (
-    <div>
-      <input
-        name="asset"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
+    <View>
+      <TextInput name="asset" value={name} onChange={onChange(name)} />
 
-      <button onClick={submit}> Submit </button>
-    </div>
+      <Button onPress={submit}> Submit </Button>
+    </View>
   );
 }
 

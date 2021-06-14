@@ -1,4 +1,5 @@
 import React from "react";
+import { View, Text, Button } from "react-native";
 import { useDispatch } from "react-redux";
 import { removeData } from "./features/dataSlice";
 
@@ -11,11 +12,11 @@ function ListItem({ id, text }) {
   }
 
   return (
-    <div className="listitem">
-      <div>{text}</div>
+    <View>
+      <Text>{text}</Text>
 
-      <button onClick={remove}>Delete</button>
-    </div>
+      <Button onPress={remove}>Delete</Button>
+    </View>
   );
 }
 
