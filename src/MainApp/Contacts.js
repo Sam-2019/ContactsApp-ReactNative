@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { View } from "react-native";
 import List from "./List";
 import ListInput from "./ListInput";
 import { useSelector } from "react-redux";
@@ -9,10 +10,10 @@ function App() {
 
   const [name, setName] = useState("");
   return (
-    <>
+    <View>
       <ListInput name={name} setName={setName} />
       <List data={dataList} />
-    </>
+    </View>
   );
 }
 
