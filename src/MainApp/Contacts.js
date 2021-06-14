@@ -14,8 +14,13 @@ function Contacts() {
 
   return (
     <View styles={styles.container}>
-      <ListInput name={name} setName={setName} />
-      <List data={dataList} />
+      <View styles={styles.container}>
+        <ListInput name={name} setName={setName} />
+      </View>
+
+      <View styles={styles.container}>
+        <List data={dataList} />
+      </View>
     </View>
   );
 }
