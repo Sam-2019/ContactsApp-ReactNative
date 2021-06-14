@@ -11,8 +11,8 @@ export const dataSlice = createSlice({
       email: "alex.anderson@gmail.com",
       image: "https://randomuser.me/api/portraits/men/75.jpg",
       number: {
-        work: "",
-        home: ""
+        work: "92998-3874",
+        home: "1-770-736-8031 x56442"
       }
     },
     {

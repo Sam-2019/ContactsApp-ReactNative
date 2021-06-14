@@ -6,7 +6,7 @@ function ContactItem({ id, fname, lname, image, email, workPhone, homePhone }) {
   const navigation = useNavigation();
 
   return (
-    <View>
+    <View style={styles.container}>
       <Pressable
         onPress={() =>
           navigation.navigate("User", {
@@ -34,9 +34,7 @@ function ContactItem({ id, fname, lname, image, email, workPhone, homePhone }) {
 export default ContactItem;
 
 const styles = StyleSheet.create({
-  container: {
-    paddingTop: 50
-  },
+  container: {},
   tinyLogo: {
     width: 50,
     height: 50
