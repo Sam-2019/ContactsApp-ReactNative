@@ -1,15 +1,22 @@
 import React from "react";
-import { ScrollView, View } from "react-native";
-import List from "./List";
+import { createStackNavigator } from "@react-navigation/stack";
 
-function ContactsScreen() {
+import List from "./List";
+import User from "./User";
+
+const Stack = createStackNavigator();
+
+function ContactsStack() {
   return (
-    <ScrollView>
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <List />
-      </View>
-    </ScrollView>
+    <Stack.Navigator initialRouteName="List">
+      <Stack.Screen name="List" component={List} />
+      <Stack.Screen
+        name="User"
+        component={User}
+        options={({ route }) => ({ title: route.params.user })}
+      />
+    </Stack.Navigator>
   );
 }
 
-export default ContactsScreen;
+export default ContactsStack;
