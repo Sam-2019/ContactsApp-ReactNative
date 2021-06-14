@@ -1,5 +1,5 @@
 import React from "react";
-import { View, FlatList } from "react-native";
+import { ScrollView, FlatList } from "react-native";
 import { useSelector } from "react-redux";
 
 import { contactData } from "../features/dataSlice";
@@ -21,13 +21,13 @@ function ContactList() {
   );
 
   return (
-    <View>
+    <ScrollView>
       <FlatList
         data={dataList}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
       />
-    </View>
+    </ScrollView>
   );
 }
 

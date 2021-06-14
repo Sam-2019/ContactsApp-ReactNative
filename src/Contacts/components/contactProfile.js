@@ -16,19 +16,36 @@ function ContactProfile() {
   const ContactObject = Object.assign({}, newData[0]);
 
   return (
-    <View>
-      <Image
-        style={styles.tinyLogo}
-        source={{
-          uri:
-            "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAYAAAA6oTAqAAAAEXRFWHRTb2Z0d2FyZQBwbmdjcnVzaEB1SfMAAABQSURBVGje7dSxCQBACARB+2/ab8BEeQNhFi6WSYzYLYudDQYGBgYGBgYGBgYGBgYGBgZmcvDqYGBgmhivGQYGBgYGBgYGBgYGBgYGBgbmQw+P/eMrC5UTVAAAAABJRU5ErkJggg=="
-        }}
-      />
-      <Text>{ContactObject.fname}</Text>
-      <Text>{ContactObject.lname}</Text>
-      <Text>{ContactObject.email}</Text>
-      <Text>{ContactObject.number.work}</Text>
-      <Text>{ContactObject.number.home}</Text>
+    <View style={styles.container}>
+      <View style={styles.imageXnameXnumber}>
+        <Image
+          style={styles.tinyLogo}
+          source={{
+            uri:
+              "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAYAAAA6oTAqAAAAEXRFWHRTb2Z0d2FyZQBwbmdjcnVzaEB1SfMAAABQSURBVGje7dSxCQBACARB+2/ab8BEeQNhFi6WSYzYLYudDQYGBgYGBgYGBgYGBgYGBgZmcvDqYGBgmhivGQYGBgYGBgYGBgYGBgYGBgbmQw+P/eMrC5UTVAAAAABJRU5ErkJggg=="
+          }}
+        />
+
+        <Text style={styles.name}>
+          {ContactObject.fname} {ContactObject.lname}
+        </Text>
+        <Text style={styles.number}>{ContactObject.number.work}</Text>
+      </View>
+
+      <View style={styles.item_wrapper}>
+        <Text style={styles.item}>Email </Text>
+        <Text style={styles.text}>{ContactObject.email}</Text>
+      </View>
+
+      <View style={styles.item_wrapper}>
+        <Text style={styles.item}>Work</Text>
+        <Text style={styles.text}>{ContactObject.number.work}</Text>
+      </View>
+
+      <View style={styles.item_wrapper}>
+        <Text style={styles.item}>Personal</Text>
+        <Text style={styles.text}>{ContactObject.number.home}</Text>
+      </View>
     </View>
   );
 }
@@ -37,14 +54,37 @@ export default ContactProfile;
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 50
+    flex: 1,
+    flexDirection: "column"
+  },
+  imageXnameXnumber: {
+    marginTop: 70,
+    marginBottom: 70,
+    alignItems: "center"
   },
   tinyLogo: {
     width: 50,
-    height: 50
+    height: 50,
+    borderRadius: 100
   },
-  logo: {
-    width: 66,
-    height: 58
+
+  name: {
+    fontSize: 18,
+    fontWeight: 400
+  },
+  number: {
+    fontSize: 15
+  },
+  item_wrapper: {
+    marginBottom: 10,
+    padding: 10
+  },
+  item: {
+    fontWeight: "bold",
+    fontSize: 17
+  },
+  text: {
+    fontSize: 15,
+    color: "blue"
   }
 });
