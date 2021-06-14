@@ -1,5 +1,4 @@
 import React from "react";
-import "./listitem.css";
 import { useDispatch } from "react-redux";
 import { removeData } from "./features/dataSlice";
 
