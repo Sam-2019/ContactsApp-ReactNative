@@ -1,15 +1,13 @@
 import React from "react";
 import { View, Text, Image, StyleSheet } from "react-native";
+import { useNavigation, useRoute } from "@react-navigation/native";
+import { useSelector } from "react-redux";
+import { dataData } from "../features/dataSlice";
 
-function ContactProfile({
-  fname,
-  lname,
-  image,
-  email,
-  workPhone,
-  homePhone,
-  navigation
-}) {
+function ContactProfile() {
+  const route = useRoute();
+  const contactID = route.params.userID;
+
   return (
     <View>
       <Image
