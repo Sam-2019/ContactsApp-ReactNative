@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, Button } from "react-native";
 import { useDispatch } from "react-redux";
-import { removeData } from "./features/dataSlice";
+import { removeData } from "../../features/dataSlice";
 
 function ListItem({ id, text }) {
   const dispatch = useDispatch();
