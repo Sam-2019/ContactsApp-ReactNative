@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View } from "react-native";
+import { View, StyleSheet } from "react-native";
 import List from "./List";
 import ListInput from "./ListInput";
 import { useSelector } from "react-redux";
@@ -9,8 +9,9 @@ function App() {
   const dataList = useSelector(dataData);
 
   const [name, setName] = useState("");
+
   return (
-    <View>
+    <View styles={styles.container}>
       <ListInput name={name} setName={setName} />
       <List data={dataList} />
     </View>
@@ -18,3 +19,9 @@ function App() {
 }
 
 export default App;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  }
+});
