@@ -1,18 +1,18 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 
-import List from "./List";
-import User from "./User";
+import ContactList from "../../components/contactItem";
+import ContactProfile from "../../components/contactProfile";
 
 const Stack = createStackNavigator();
 
 function ContactsStack() {
   return (
-    <Stack.Navigator initialRouteName="List">
-      <Stack.Screen name="List" component={List} />
+    <Stack.Navigator initialRouteName="ContactList">
+      <Stack.Screen name="ContactList" component={ContactList} />
       <Stack.Screen
         name="User"
-        component={User}
+        component={ContactProfile}
         options={({ route }) => ({ title: route.params.user })}
       />
     </Stack.Navigator>

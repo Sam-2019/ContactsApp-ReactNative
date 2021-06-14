@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, Image, StyleSheet, Pressable } from "react-native";
 
-function ContactItem({ fname, lname, image, email, workPhone, homePhone }) {
+function ContactProfile({ fname, lname, image, email, workPhone, homePhone }) {
   return (
     <View>
       <Pressable>
@@ -21,7 +21,7 @@ function ContactItem({ fname, lname, image, email, workPhone, homePhone }) {
   );
 }
 
-export default ContactItem;
+export default ContactProfile;
 
 const styles = StyleSheet.create({
   container: {
