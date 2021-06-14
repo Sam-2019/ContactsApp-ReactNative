@@ -1,12 +1,12 @@
 import React from "react";
-import Main from "./MainApp/Main";
+import Contacts from "./MainApp/Contacts";
 import store from "./store";
 import { Provider } from "react-redux";
 
 function App() {
   return (
     <Provider store={store}>
-      <Main />
+      <Contacts />
     </Provider>
   );
 }
