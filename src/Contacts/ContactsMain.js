@@ -3,9 +3,9 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import ContactsScreen from "./Screens/Contacts";
-import FavoritesScreen from "./Screens/Favorite";
-import MeScreen from "./Screens/Me";
+import ContactsScreen from "./Screens/Contacts/Contacts";
+import FavoritesScreen from "./Screens/Contacts/Favorite";
+import MeScreen from "./Screens/Contacts/Me";
 
 const Tab = createBottomTabNavigator();
 
