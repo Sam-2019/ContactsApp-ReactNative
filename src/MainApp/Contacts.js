@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { View, StyleSheet } from "react-native";
-import List from "./List";
-import ListInput from "./ListInput";
+
 import { useSelector } from "react-redux";
 import { dataData } from "./features/dataSlice";
+
+import List from "./List";
+import ListInput from "./ListInput";
 
 function Contacts() {
   const dataList = useSelector(dataData);
