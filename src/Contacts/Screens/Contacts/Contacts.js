@@ -9,7 +9,11 @@ const Stack = createStackNavigator();
 function ContactsStack() {
   return (
     <Stack.Navigator initialRouteName="ContactList">
-      <Stack.Screen name="Contacts" component={ContactList} />
+      <Stack.Screen
+        name="Contacts"
+        component={ContactList}
+        options={{ headerShown: false }}
+      />
       <Stack.Screen
         name="User"
         component={ContactProfile}
