@@ -30,7 +30,7 @@ function MeScreen() {
 
 const Tab = createBottomTabNavigator();
 
-function App() {
+function Contacts() {
   return (
     <NavigationContainer>
       <Tab.Navigator>
@@ -42,4 +42,4 @@ function App() {
   );
 }
 
-export default App;
+export default Contacts;
