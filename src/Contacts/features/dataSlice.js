@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { v4 as uuidv4 } from "uuid";
 
 export const dataSlice = createSlice({
-  fname: "data",
+  name: "data",
   initialState: [
     {
       id: uuidv4(),
