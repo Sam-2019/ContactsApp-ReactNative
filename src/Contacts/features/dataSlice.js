@@ -138,6 +138,6 @@ export const dataSlice = createSlice({
 
 export const { adddata, removeData } = dataSlice.actions;
 
-export const dataData = (state) => state.data;
+export const contactData = (state) => state.data;
 
 export default dataSlice.reducer;

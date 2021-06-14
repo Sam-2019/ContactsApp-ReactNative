@@ -2,11 +2,11 @@ import React from "react";
 import { View, FlatList } from "react-native";
 import { useSelector } from "react-redux";
 
-import { dataData } from "../features/dataSlice";
+import { contactData } from "../features/dataSlice";
 import ContactItem from "./contactItem";
 
 function ContactList() {
-  const dataList = useSelector(dataData);
+  const dataList = useSelector(contactData);
 
   const renderItem = ({ item }) => (
     <ContactItem
