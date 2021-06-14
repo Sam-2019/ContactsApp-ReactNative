@@ -1,34 +1,45 @@
-import React, { useState } from "react";
-import { View, StyleSheet } from "react-native";
+import React from "react";
+import { View, Text } from "react-native";
 
-import { useSelector } from "react-redux";
-import { dataData } from "./features/dataSlice";
+import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import List from "./List";
-import ListInput from "./ListInput";
-
-function Contacts() {
-  const dataList = useSelector(dataData);
-
-  const [name, setName] = useState("");
-
+function ContactsScreen() {
   return (
-    <View styles={styles.container}>
-      <View styles={styles.container}>
-        <ListInput name={name} setName={setName} />
-      </View>
-
-      <View styles={styles.container}>
-        <List data={dataList} />
-      </View>
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <Text>Contacts</Text>
     </View>
   );
 }
 
-export default Contacts;
+function FavoritesScreen() {
+  return (
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <Text>Favorites!</Text>
+    </View>
+  );
+}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  }
-});
+function MeScreen() {
+  return (
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <Text>Me!</Text>
+    </View>
+  );
+}
+
+const Tab = createBottomTabNavigator();
+
+function App() {
+  return (
+    <NavigationContainer>
+      <Tab.Navigator>
+        <Tab.Screen name="Contacts" component={ContactsScreen} />
+        <Tab.Screen name="Favorites" component={FavoritesScreen} />
+        <Tab.Screen name="Me" component={MeScreen} />
+      </Tab.Navigator>
+    </NavigationContainer>
+  );
+}
+
+export default App;
