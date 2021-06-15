@@ -127,17 +127,17 @@ export const contactSlice = createSlice({
     }
   ],
   reducers: {
-    adddata: (state, action) => {
+    add: (state, action) => {
       return state.concat(action.payload);
     },
-    removeData: (state, action) => {
+    remove: (state, action) => {
       return state.filter((result) => result.id !== action.payload);
     }
   }
 });
 
-export const { adddata, removeData } = contactSlice.actions;
+export const { add, remove } = contactSlice.actions;
 
-export const contactData = (state) => state.data;
+export const contactData = (state) => state.contact;
 
 export default contactSlice.reducer;

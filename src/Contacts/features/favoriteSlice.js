@@ -37,6 +37,6 @@ export const favoriteSlice = createSlice({
 
 export const { add, remove } = favoriteSlice.actions;
 
-export const favoriteData = (state) => state.data;
+export const favoriteData = (state) => state.favorite;
 
 export default favoriteSlice.reducer;
