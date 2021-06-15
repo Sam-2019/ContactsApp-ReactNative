@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import dataReducer from "./Contacts/features/dataSlice";
+import contactReducer from "./Contacts/features/contactSlice";
+import favoriteReducer from "./Contacts/features/contactSlice";
 
 export default configureStore({
   reducer: {
-    data: dataReducer
+    contact: contactReducer,
+    favorite: favoriteReducer
   }
 });
