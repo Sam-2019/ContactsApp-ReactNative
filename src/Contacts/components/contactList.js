@@ -8,8 +8,6 @@ import ContactItem from "./contactItem";
 function ContactList() {
   const dataList = useSelector(contactData);
 
-  console.log(dataList);
-
   const renderItem = ({ item }) => (
     <ContactItem
       id={item.id}
