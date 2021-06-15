@@ -1,29 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { ScrollView, FlatList } from "react-native";
+import React from "react";
+import { ScrollView, FlatList, View, Text } from "react-native";
 import { useSelector } from "react-redux";
-import { useRoute } from "@react-navigation/native";
 
-import { contactData } from "../features/contactSlice";
-import { favoriteData } from "../features/favoriteSlice";
-import ContactItem from "./contactItem";
+import { favoriteData } from "../../features/favoriteSlice";
+import ContactItem from "../../components/contactItem";
 
 function ContactList() {
-  const route = useRoute();
-  const contacts = useSelector(contactData);
   const favorites = useSelector(favoriteData);
-
-  const [state, setState] = useState(contacts);
-
-  useEffect(() => {
-    function onRouteNameChange() {
-      if (route.name === "Favorites") {
-        setState(favorites);
-      }
-    }
-    onRouteNameChange();
-  }, [route.name, favorites]);
-
-  console.log(route.name);
+  console.log(favorites);
 
   const renderItem = ({ item }) => (
     <ContactItem
@@ -39,11 +23,15 @@ function ContactList() {
 
   return (
     <ScrollView>
-      <FlatList
-        data={state}
+      <View>
+        <Text>Hello</Text>
+      </View>
+
+      {/* <FlatList
+        data={favorites}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
-      />
+      /> */}
     </ScrollView>
   );
 }
