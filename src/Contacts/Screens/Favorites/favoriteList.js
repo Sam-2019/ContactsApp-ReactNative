@@ -7,11 +7,9 @@ import ContactItem from "../../components/contactItem";
 import { FilterData } from "../../utils";
 
 function FavoriteList() {
-  const favorites = useSelector(favoriteData);
   const contacts = useSelector(contactData);
 
-  const data = FilterData(contacts);
-  console.log(data);
+  const favorites = FilterData(contacts);
 
   const renderItem = ({ item }) => (
     <ContactItem
@@ -27,15 +25,11 @@ function FavoriteList() {
 
   return (
     <ScrollView>
-      <View>
-        <Text>Hello</Text>
-      </View>
-
-      {/* <FlatList
+      <FlatList
         data={favorites}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
-      /> */}
+      />
     </ScrollView>
   );
 }
