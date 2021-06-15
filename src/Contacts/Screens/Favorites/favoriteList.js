@@ -1,8 +1,7 @@
 import React from "react";
-import { ScrollView, FlatList, View, Text } from "react-native";
+import { ScrollView, FlatList } from "react-native";
 import { useSelector } from "react-redux";
 import { contactData } from "../../features/contactSlice";
-import { favoriteData } from "../../features/favoriteSlice";
 import ContactItem from "../../components/contactItem";
 import { FilterData } from "../../utils";
 
