@@ -2,11 +2,13 @@ import React from "react";
 import { ScrollView, FlatList } from "react-native";
 import { useSelector } from "react-redux";
 
-import { contactData } from "../features/dataSlice";
+import { contactData } from "../features/contactSlice";
 import ContactItem from "./contactItem";
 
 function ContactList() {
   const dataList = useSelector(contactData);
+
+  console.log(dataList);
 
   const renderItem = ({ item }) => (
     <ContactItem

@@ -1,143 +1,42 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { v4 as uuidv4 } from "uuid";
 
-export const dataSlice = createSlice({
+export const favoriteSlice = createSlice({
   name: "data",
   initialState: [
     {
       id: uuidv4(),
-      fname: "Alexander",
-      lname: "Anderson",
-      email: "alex.anderson@gmail.com",
-      image: "https://randomuser.me/api/portraits/men/75.jpg",
-      number: {
-        work: "92998-3874",
-        home: "1-770-736-8031 x56442"
-      }
+      contactID: "80c407b0-7a4b-486e-b3e7-e016bdc30f6e"
     },
     {
       id: uuidv4(),
-      fname: "Leanne",
-      lname: "Graham",
-      email: "Sincere@april.biz",
-      image: "https://randomuser.me/api/portraits/men/75.jpg",
-      number: {
-        work: "92998-3874",
-        home: "1-770-736-8031 x56442"
-      }
+      contactID: "2c46ffad-f7fd-4e01-9c71-5a1da9d795a4"
     },
     {
       id: uuidv4(),
-      fname: "Ervin",
-      lname: "Howell",
-      email: "Shanna@melissa.tv",
-      image: "https://randomuser.me/api/portraits/men/75.jpg",
-      number: {
-        work: "90566-7771",
-        home: "010-692-6593 x09125"
-      }
+      contactID: "96d96228-a5a2-4766-b41e-f8bd40903315"
     },
     {
       id: uuidv4(),
-      fname: "Clementine",
-      lname: "Bauch",
-      email: "Nathan@yesenia.net",
-      image: "https://randomuser.me/api/portraits/men/75.jpg",
-      number: {
-        work: "59590-4157",
-        home: "1-463-123-4447"
-      }
+      contactID: "442bb56e-59c9-42a8-80a0-f8f493d84465"
     },
     {
       id: uuidv4(),
-      fname: "Patricia",
-      lname: "Lebsack",
-      email: "Julianne.OConner@kory.org",
-      image: "https://randomuser.me/api/portraits/men/75.jpg",
-      number: {
-        work: "53919-4257",
-        home: "493-170-9623 x156"
-      }
-    },
-    {
-      id: uuidv4(),
-      fname: "Chelsey",
-      lname: "Dietrich",
-      email: "Lucio_Hettinger@annie.ca",
-      image: "https://randomuser.me/api/portraits/men/75.jpg",
-      number: {
-        work: "33263",
-        home: "(254)954-1289"
-      }
-    },
-    {
-      id: uuidv4(),
-      fname: "Dennis",
-      lname: "Schulist",
-      email: "Karley_Dach@jasper.info",
-      image: "https://randomuser.me/api/portraits/men/75.jpg",
-      number: {
-        work: "23505-1337",
-        home: "1-477-935-8478 x6430"
-      }
-    },
-    {
-      id: uuidv4(),
-      fname: "Kurtis",
-      lname: "Weissnat",
-      email: "Telly.Hoeger@billy.biz",
-      image: "https://randomuser.me/api/portraits/men/75.jpg",
-      number: {
-        home: "210.067.6132",
-        work: "58804-1099"
-      }
-    },
-    {
-      id: uuidv4(),
-      fname: "Nicholas",
-      lname: "Runolfsdottir",
-      email: "Sherwood@rosamond.me",
-      image: "https://randomuser.me/api/portraits/men/75.jpg",
-      number: {
-        work: "45169",
-        home: "586.493.6943 x140"
-      }
-    },
-    {
-      id: uuidv4(),
-      fname: "Glenna",
-      lname: "Reichert",
-      email: "Chaim_McDermott@dana.io",
-      image: "https://randomuser.me/api/portraits/men/75.jpg",
-      number: {
-        work: "76495-3109",
-        home: "(775)976-6794 x41206"
-      }
-    },
-    {
-      id: uuidv4(),
-      fname: "Clementina",
-      lname: "DuBuque",
-      email: "Rey.Padberg@karina.biz",
-      image: "https://randomuser.me/api/portraits/men/75.jpg",
-      number: {
-        work: "31428-2261",
-        home: "024-648-3804"
-      }
+      contactID: "2df4e679-ff77-494e-9860-ce81599463ed"
     }
   ],
   reducers: {
-    adddata: (state, action) => {
+    add: (state, action) => {
       return state.concat(action.payload);
     },
-    removeData: (state, action) => {
+    remove: (state, action) => {
       return state.filter((result) => result.id !== action.payload);
     }
   }
 });
 
-export const { adddata, removeData } = dataSlice.actions;
+export const { add, remove } = favoriteSlice.actions;
 
-export const contactData = (state) => state.data;
+export const favoriteData = (state) => state.data;
 
-export default dataSlice.reducer;
+export default favoriteSlice.reducer;
