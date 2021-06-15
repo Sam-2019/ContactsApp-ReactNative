@@ -4,7 +4,7 @@ import { useRoute } from "@react-navigation/native";
 import { useSelector } from "react-redux";
 import { contactData } from "../features/contactSlice";
 
-import { FilterData } from "../utils";
+import { FilterItem } from "../utils";
 
 function ContactProfile() {
   const route = useRoute();
@@ -12,7 +12,7 @@ function ContactProfile() {
 
   const contacts = useSelector(contactData);
 
-  const newData = FilterData(contacts, contactID);
+  const newData = FilterItem(contacts, contactID);
   const ContactObject = Object.assign({}, newData[0]);
 
   return (

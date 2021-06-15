@@ -1,13 +1,17 @@
 import React from "react";
 import { ScrollView, FlatList, View, Text } from "react-native";
 import { useSelector } from "react-redux";
-
+import { contactData } from "../../features/contactSlice";
 import { favoriteData } from "../../features/favoriteSlice";
 import ContactItem from "../../components/contactItem";
+import { FilterData } from "../../utils";
 
 function FavoriteList() {
   const favorites = useSelector(favoriteData);
-  console.log(favorites);
+  const contacts = useSelector(contactData);
+
+  const data = FilterData(contacts);
+  console.log(data);
 
   const renderItem = ({ item }) => (
     <ContactItem

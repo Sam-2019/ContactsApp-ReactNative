@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { v4 as uuidv4 } from "uuid";
 
 export const contactSlice = createSlice({
-  name: "data",
+  name: "contact",
   initialState: [
     {
       id: uuidv4(),
@@ -13,7 +13,8 @@ export const contactSlice = createSlice({
       number: {
         work: "92998-3874",
         home: "1-770-736-8031 x56442"
-      }
+      },
+      favorite: true
     },
     {
       id: uuidv4(),
@@ -24,7 +25,8 @@ export const contactSlice = createSlice({
       number: {
         work: "92998-3874",
         home: "1-770-736-8031 x56442"
-      }
+      },
+      favorite: true
     },
     {
       id: uuidv4(),
@@ -35,7 +37,8 @@ export const contactSlice = createSlice({
       number: {
         work: "90566-7771",
         home: "010-692-6593 x09125"
-      }
+      },
+      favorite: false
     },
     {
       id: uuidv4(),
@@ -46,7 +49,8 @@ export const contactSlice = createSlice({
       number: {
         work: "59590-4157",
         home: "1-463-123-4447"
-      }
+      },
+      favorite: true
     },
     {
       id: uuidv4(),
@@ -57,7 +61,8 @@ export const contactSlice = createSlice({
       number: {
         work: "53919-4257",
         home: "493-170-9623 x156"
-      }
+      },
+      favorite: true
     },
     {
       id: uuidv4(),
@@ -68,7 +73,8 @@ export const contactSlice = createSlice({
       number: {
         work: "33263",
         home: "(254)954-1289"
-      }
+      },
+      favorite: false
     },
     {
       id: uuidv4(),
@@ -79,7 +85,8 @@ export const contactSlice = createSlice({
       number: {
         work: "23505-1337",
         home: "1-477-935-8478 x6430"
-      }
+      },
+      favorite: true
     },
     {
       id: uuidv4(),
@@ -90,7 +97,8 @@ export const contactSlice = createSlice({
       number: {
         home: "210.067.6132",
         work: "58804-1099"
-      }
+      },
+      favorite: false
     },
     {
       id: uuidv4(),
@@ -101,7 +109,8 @@ export const contactSlice = createSlice({
       number: {
         work: "45169",
         home: "586.493.6943 x140"
-      }
+      },
+      favorite: true
     },
     {
       id: uuidv4(),
@@ -112,7 +121,8 @@ export const contactSlice = createSlice({
       number: {
         work: "76495-3109",
         home: "(775)976-6794 x41206"
-      }
+      },
+      favorite: false
     },
     {
       id: uuidv4(),
@@ -123,7 +133,8 @@ export const contactSlice = createSlice({
       number: {
         work: "31428-2261",
         home: "024-648-3804"
-      }
+      },
+      favorite: true
     }
   ],
   reducers: {

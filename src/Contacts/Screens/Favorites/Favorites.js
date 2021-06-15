@@ -1,7 +1,7 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 
-import FavoriteList from "../../components/contactList";
+import FavoriteList from "./favoriteList";
 import FavoriteProfile from "../../components/contactProfile";
 
 const Stack = createStackNavigator();
