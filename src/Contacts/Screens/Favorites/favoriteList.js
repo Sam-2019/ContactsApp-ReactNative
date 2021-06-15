@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { favoriteData } from "../../features/favoriteSlice";
 import ContactItem from "../../components/contactItem";
 
-function ContactList() {
+function FavoriteList() {
   const favorites = useSelector(favoriteData);
   console.log(favorites);
 
@@ -36,4 +36,4 @@ function ContactList() {
   );
 }
 
-export default ContactList;
+export default FavoriteList;
