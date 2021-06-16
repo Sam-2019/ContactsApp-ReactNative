@@ -12,12 +12,13 @@ export const useInput = (initialValue) => {
   const [value, setValue] = useState(initialValue);
 
   const handleChange = (text) => {
+    console.log(text);
     setValue(text);
   };
 
   return {
-    value: value,
-    onChangeText: handleChange
+    value,
+    handleChange
   };
 };
 

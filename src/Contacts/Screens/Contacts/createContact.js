@@ -1,14 +1,13 @@
 import React from "react";
-import { StyleSheet, View, TextInput, Button, Text } from "react-native";
+import { StyleSheet, View, TextInput, Button } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { useInput } from "../../utils";
 
 function Create() {
-  const fname = useInput("");
-  const lname = useInput("");
-  const email = useInput("");
-  const numberWork = useInput("");
-  const numberHome = useInput("");
+  const [fname, setFName] = React.useState("");
+  const [lname, setLName] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [numberWork, setNumberWork] = React.useState("");
+  const [numberHome, setNumberHome] = React.useState("");
 
   const navigation = useNavigation();
 
@@ -18,21 +17,14 @@ function Create() {
         <Button onPress={saveContact} title="Save" color="blue" />
       )
     });
-  }, [navigation]);
-
-  // function onChangeText() {
-  //   setInputValue(inputValue);
-  // }
+  }, [navigation, saveContact]);
 
   function saveContact() {
     const newContact = {
-      fname: fname.value,
-      lname: lname.value,
-      email: email.value,
-      numberWork: numberWork.value,
-      numberHome: numberHome.value
+      fname,
+      lname,
+      email
     };
-    console.log(fname);
 
     console.log(newContact);
   }
@@ -41,35 +33,30 @@ function Create() {
     <View style={styles.container}>
       <TextInput
         style={styles.input}
-        placeholder="First Name"
-        keyboardType="default"
-        value={fname.value}
-        onChangeText={fname.onChangeText}
+        label="First Name"
+        value={fname}
+        onChangeText={(fname) => setFName(fname)}
       />
 
       <TextInput
         style={styles.input}
-        placeholder="Last Name"
-        keyboardType="default"
+        label="Last Name"
+        value={lname}
+        onChangeText={(lname) => setLName(lname)}
       />
 
       <TextInput
         style={styles.input}
-        placeholder="Email"
-        keyboardType="email-address"
+        label="Email"
+        value={email}
+        onChangeText={(email) => setEmail(email)}
       />
 
-      <TextInput
-        style={styles.input}
-        placeholder="Work Phone"
-        keyboardType="number-pad"
-      />
+      <TextInput style={styles.input} label="Work Phone" />
 
-      <TextInput
-        style={styles.input}
-        placeholder="Home Phone"
-        keyboardType="phone-pad"
-      />
+      <TextInput style={styles.input} label="Home Phone" />
+
+      <Button onPress={saveContact} title="Save" />
     </View>
   );
 }
