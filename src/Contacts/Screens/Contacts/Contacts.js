@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Button, StyleSheet } from "react-native";
+import { View, StyleSheet, Text, Pressable } from "react-native";
 
 import { useSelector } from "react-redux";
 import { useNavigation } from "@react-navigation/native";
@@ -9,14 +9,18 @@ import ContactList from "./contactList";
 function Contact() {
   const navigation = useNavigation();
 
+  function openCreateContact() {
+    navigation.navigate("Create contact");
+  }
+
   return (
     <View style={styles.container}>
       <ContactList />
-      <View style={styles.buttonContainer}>
-        <Button
-          title="+"
-          onPress={() => navigation.navigate("Create contact")}
-        />
+
+      <View>
+        <Pressable style={styles.buttonContainer} onPress={openCreateContact}>
+          <Text style={styles.text}>+</Text>
+        </Pressable>
       </View>
     </View>
   );
@@ -31,15 +35,21 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     position: "absolute",
-    flex: 0,
+    justifyContent: "center",
     bottom: 20,
     right: 50,
+    width: 50,
     height: 50,
-    borderRadius: 100,
-    backgroundColor: "red",
-    width: 70
+    paddingLeft: 9,
+    paddingBottom: 10,
+    borderRadius: 50,
+    backgroundColor: "blue"
   },
-  button: {},
+  text: {
+    fontSize: 50,
+    fontWeight: "400",
+    color: "white"
+  },
   input: {
     height: 40,
     marginBottom: 15,
