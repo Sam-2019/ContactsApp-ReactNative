@@ -2,7 +2,7 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import ContactsStack from "./Screens/Contacts/Contacts";
+import ContactsStack from "./Screens/Contacts/ContactStack";
 import FavoritesScreen from "./Screens/Favorites/Favorites";
 import MeScreen from "./Screens/Me/Me";
 

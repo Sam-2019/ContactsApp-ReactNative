@@ -5,15 +5,15 @@ import { useNavigation } from "@react-navigation/native";
 function ContactItem({ id, fname, lname, image, workPhone }) {
   const navigation = useNavigation();
 
+  function pageNavigate() {
+    navigation.navigate("User", {
+      user: fname,
+      userID: id
+    });
+  }
+
   return (
-    <Pressable
-      onPress={() =>
-        navigation.navigate("User", {
-          user: fname,
-          userID: id
-        })
-      }
-    >
+    <Pressable onPress={pageNavigate}>
       <View style={styles.container}>
         <Image
           style={styles.tinyLogo}
