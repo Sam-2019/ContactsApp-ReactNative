@@ -1,51 +1,72 @@
 import React from "react";
-import { StyleSheet, View, TextInput } from "react-native";
+import { StyleSheet, View, TextInput, Button, Text } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { useInput } from "../../utils";
 
 function Create() {
-  const [fname, setFName] = React.useState("");
-  const [lname, setLName] = React.useState("");
-  const [email, setEmail] = React.useState("");
-  const [numberWork, setNumberWork] = React.useState("");
-  const [numberHome, setNumberHome] = React.useState("");
+  const fname = useInput("");
+  const lname = useInput("");
+  const email = useInput("");
+  const numberWork = useInput("");
+  const numberHome = useInput("");
+
+  const navigation = useNavigation();
+
+  React.useLayoutEffect(() => {
+    navigation.setOptions({
+      headerRight: () => (
+        <Button onPress={saveContact} title="Save" color="blue" />
+      )
+    });
+  }, [navigation]);
+
+  // function onChangeText() {
+  //   setInputValue(inputValue);
+  // }
+
+  function saveContact() {
+    const newContact = {
+      fname: fname.value,
+      lname: lname.value,
+      email: email.value,
+      numberWork: numberWork.value,
+      numberHome: numberHome.value
+    };
+    console.log(fname);
+
+    console.log(newContact);
+  }
 
   return (
     <View style={styles.container}>
       <TextInput
         style={styles.input}
-        onChangeText={setFName}
-        value={fname}
         placeholder="First Name"
         keyboardType="default"
+        value={fname.value}
+        onChangeText={fname.onChangeText}
       />
 
       <TextInput
         style={styles.input}
-        onChangeText={setLName}
-        value={lname}
         placeholder="Last Name"
         keyboardType="default"
       />
 
       <TextInput
         style={styles.input}
-        onChangeText={setEmail}
-        value={email}
         placeholder="Email"
         keyboardType="email-address"
       />
 
       <TextInput
         style={styles.input}
-        onChangeText={setNumberWork}
-        value={numberWork}
         placeholder="Work Phone"
         keyboardType="number-pad"
       />
 
       <TextInput
         style={styles.input}
-        onChangeText={setNumberHome}
-        value={numberHome}
         placeholder="Home Phone"
         keyboardType="phone-pad"
       />
@@ -57,7 +78,10 @@ export default Create;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    paddingTop: 5,
+    paddingRight: 5,
+    paddingLeft: 5
   },
   input: {
     height: 40,

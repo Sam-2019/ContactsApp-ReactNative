@@ -21,19 +21,7 @@ function ContactsStack() {
         component={ContactProfile}
         options={({ route }) => ({ title: route.params.user })}
       />
-      <Stack.Screen
-        name="Create contact"
-        component={CreateContact}
-        options={{
-          headerRight: () => (
-            <Button
-              onPress={() => alert("This is a button!")}
-              title="Save"
-              color="blue"
-            />
-          )
-        }}
-      />
+      <Stack.Screen name="Create contact" component={CreateContact} />
     </Stack.Navigator>
   );
 }
