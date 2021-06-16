@@ -2,6 +2,7 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 
 import ContactList from "./contactList";
+import CreateContact from "./createContact";
 import ContactProfile from "../../components/contactProfile";
 
 const Stack = createStackNavigator();
@@ -19,6 +20,7 @@ function ContactsStack() {
         component={ContactProfile}
         options={({ route }) => ({ title: route.params.user })}
       />
+      <Stack.Screen name="Create contact" component={CreateContact} />
     </Stack.Navigator>
   );
 }
